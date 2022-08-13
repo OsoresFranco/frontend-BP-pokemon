@@ -13,12 +13,14 @@
 
 .bp-button {
   border-radius: 4px;
-  height: 35px;
-  width: 100px;
+  height: 45px;
+  width: 120px;
   border: none;
   color: var(--bp-colors--font);
+  padding: 12px;
 
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
 
   &:hover:not([disabled]) {
     filter: brightness(120%);

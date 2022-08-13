@@ -1,3 +1,15 @@
-<app-bp-input _placeHolder="Buscar"></app-bp-input>
-<br />
-<app-bp-input [_icon]="true" _placeHolder="Imagen"></app-bp-input>
+<div class="test">
+  <app-form-field distribution="column">
+    <app-bp-label _for="buscar">Listado de Pokemons</app-bp-label>
+
+    <app-bp-input
+      #errorHandler
+      error="error"
+      [_icon]="true"
+      _placeHolder="Buscar"
+      _id="buscar"
+    ></app-bp-input>
+  </app-form-field>
+
+  <app-custom-button>+ Nuevo</app-custom-button>
+</div>

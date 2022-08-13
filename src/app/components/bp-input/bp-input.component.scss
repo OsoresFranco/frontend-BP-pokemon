@@ -11,6 +11,9 @@
   border: 2px solid rgb(218, 218, 218);
   border-radius: 4px;
   padding: 8px;
+  &--error {
+    border: 2px solid rgb(177, 78, 78);
+  }
 
   .bp-input__input {
     padding: 4px;

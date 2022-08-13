@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-bp-label',
   templateUrl: './bp-label.component.html',
-  styleUrls: ['./bp-label.component.scss']
+  styleUrls: ['./bp-label.component.scss'],
 })
 export class BpLabelComponent implements OnInit {
+  @Input() _for: string = '';
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

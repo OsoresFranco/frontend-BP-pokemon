@@ -1,9 +1,14 @@
-
-<div class="bp-input">
+<div class="bp-input {{ _error }}">
   <ng-container *ngIf="_icon">
     <ng-container *ngTemplateOutlet="iconContainer"></ng-container>
   </ng-container>
-  <input class="bp-input__input" type="text" placeholder="{{ _placeHolder }}" />
+  <input
+    class="bp-input__input"
+    type="text"
+    placeholder="{{ _placeHolder }}"
+    id="{{ _id }}"
+    name="{{ _id }}"
+  />
 </div>
 
 <ng-template #iconContainer>
