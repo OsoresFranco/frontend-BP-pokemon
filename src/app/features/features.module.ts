@@ -10,6 +10,8 @@ import { BpInputComponent } from '../components/bp-input/bp-input.component';
 import { BpLabelComponent } from '../components/bp-label/bp-label.component';
 import { TableComponent } from '../components/table/table.component';
 import { BpSliderComponent } from '../components/bp-slider/bp-slider.component';
+import { BpFormComponent } from './views/bp-form/bp-form.component';
+import { HeaderComponent } from './views/header/header.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { BpSliderComponent } from '../components/bp-slider/bp-slider.component';
     BpInputComponent,
     BpLabelComponent,
     TableComponent,
-    BpSliderComponent
+    BpSliderComponent,
+    BpFormComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,

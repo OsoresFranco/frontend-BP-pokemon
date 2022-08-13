@@ -1,0 +1,33 @@
+.bp-form {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  height: 150px;
+}
+
+.bp-form__title {
+  text-align: center;
+  width: 100%;
+}
+
+.bp-form__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  height: 100%;
+  width: 100%;
+  min-height: 100px;
+}
+
+.bp-form__actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bp-form__actions-item {
+  margin: auto 25px auto 25px;
+}

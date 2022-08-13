@@ -3,6 +3,8 @@
 :host {
   --bp-slider__track: var(--bp-purple-color-dark);
   --bp-slider__track--unfilled: var(--bp-grey-color-light);
+
+  width: 100%;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -44,5 +46,12 @@ input[type="range"]::-ms-fill-upper {
 }
 
 .bp-slider {
-  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 100%;
+}
+
+.bp-slider__item{
+  margin: auto 10px auto 10px;
 }

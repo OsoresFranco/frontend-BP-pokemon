@@ -9,5 +9,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
+  width: 100%;
+}
+
+.bp-form-field__item {
+  margin: auto 5px auto 5px;
+  width: 100%;
 }
