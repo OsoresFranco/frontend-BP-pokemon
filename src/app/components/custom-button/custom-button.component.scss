@@ -1,0 +1,47 @@
+@import "./../../../styles.scss";
+
+:host {
+  // Background colors
+  --bp-colors--primary: var(--bp-button-color-primary);
+  --bp-colors--secondary: var(--bp-button-color-secondary);
+  --bp-colors--disabled: var(--bp-button-color-disabled);
+
+  // Font Color
+  --bp-colors--font: var(--bp-button-text);
+  --bp-colors--font--disabled: var(--bp-grey-color-dark);
+}
+
+.bp-button {
+  border-radius: 4px;
+  height: 35px;
+  width: 100px;
+  border: none;
+  color: var(--bp-colors--font);
+
+  font-weight: bold;
+
+  &:hover:not([disabled]) {
+    filter: brightness(120%);
+    transition-duration: 0.3s;
+  }
+
+  &:active:not([disabled]) {
+    transform: scale(0.95);
+    transition-duration: 0.1s;
+  }
+
+  &--primary {
+    background: var(--bp-colors--primary);
+  }
+
+  &--secondary {
+    background: var(--bp-colors--secondary);
+  }
+
+  &--disabled {
+    background: var(--bp-colors--disabled);
+    color: var(--bp-colors--font--disabled);
+  }
+}
+
+// onHover onActive

@@ -1,0 +1,26 @@
+:root{
+  // BP-pokemon App Colors
+  --font: 72px;
+
+  --bp-white-color: #ffffff;
+  --bp-black-color: #1d1c1c;
+
+  /* purple */
+  --bp-purple-color-dark: #6657f8;
+  --bp-purple-color-light: #8a82df;
+
+  /* grey */
+  --bp-grey-color-lighter: #ccd0d1;
+  --bp-grey-color-light: #d0cdfb;
+  --bp-grey-color-dark: #9eacb7;
+
+  /* bp-buttons colors*/
+  --bp-button-color-primary: var(--bp-purple-color-dark);
+  --bp-button-color-secondary: var(--bp-purple-color-light);
+  --bp-button-color-disabled: var(--bp-grey-color-lighter);
+
+  --bp-button-text: var(--bp-white-color);
+
+  // Fonts
+
+}
