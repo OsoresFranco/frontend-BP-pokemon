@@ -8,6 +8,7 @@ import { HomeComponent } from './views/home/home.component';
 import { FormFieldComponent } from '../components/form-field/form-field.component';
 import { BpInputComponent } from '../components/bp-input/bp-input.component';
 import { BpLabelComponent } from '../components/bp-label/bp-label.component';
+import { TableComponent } from '../components/table/table.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { BpLabelComponent } from '../components/bp-label/bp-label.component';
     HomeComponent,
     FormFieldComponent,
     BpInputComponent,
-    BpLabelComponent
+    BpLabelComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,

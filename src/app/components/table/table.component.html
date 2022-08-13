@@ -1,0 +1,29 @@
+<table class="bp-table">
+  <tr>
+    <th>Nombre</th>
+    <th>Imagen</th>
+    <th>Ataque</th>
+    <th>Defensa</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let pokemon of data">
+    <td>{{ pokemon.name }}</td>
+
+    <td class="bp-table__img-container">
+      <img
+        class="bp-table__img"
+        src="{{ pokemon.image }}"
+        alt="{{ pokemon.name }} image"
+      />
+    </td>
+
+    <td>{{ pokemon.attack }}</td>
+
+    <td>{{ pokemon.defense }}</td>
+
+    <td class="bp-table__actions-container">
+      <fa-icon class="bp-table__icon" [icon]="faPen"></fa-icon>
+      <fa-icon class="bp-table__icon" [icon]="faTrashCan"></fa-icon>
+    </td>
+  </tr>
+</table>

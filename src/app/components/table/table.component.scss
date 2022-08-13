@@ -1,0 +1,36 @@
+@import "../../../styles.scss";
+:host {
+  --bp__table-icon: var(--bp-button-color-primary);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 2px solid #dddddd;
+  padding: 8px;
+}
+th {
+  text-align: center;
+}
+
+.bp-table__img {
+  height: 100px;
+  width: 100px;
+}
+
+.bp-table__img-container,
+.bp-table__actions-container {
+  text-align: center;
+}
+
+.bp-table__actions-container {
+  color: var(--bp__table-icon);
+}
+
+.bp-table__icon {
+  margin: 25px;
+}
