@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../src/assets/scss/bp-vars";
 
+@font-face {
+  font-family: "Freesans";
+  src: local("Freesans"), url(./assets/fonts/FreeSans.ttf) format("truetype");
+}
+
+* {
+  font-family: "Freesans", Helvetica, Arial, sans-serif;
+  letter-spacing: 1.2px;
+}
+
 html,
 body {
   margin: 0px;

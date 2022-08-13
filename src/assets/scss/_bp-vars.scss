@@ -11,7 +11,7 @@
 
   /* grey */
   --bp-grey-color-lighter: #ccd0d1;
-  --bp-grey-color-light: #d0cdfb;
+  --bp-grey-color-light: #cac9c9;
   --bp-grey-color-dark: #9eacb7;
 
   /* bp-buttons colors*/
@@ -21,6 +21,10 @@
 
   --bp-button-text: var(--bp-white-color);
 
-  // Fonts
+  // Input Border
+  --bp-input--border: var(--bp-button-color-primary)
+
+  //placeholder color
+  --bp-input--placeholder: var(--bp-purple-color-dark)
 
 }

@@ -1,4 +1,11 @@
-<div>
-    <i class="fa fa-user icon">icon</i>
-    <input type="text">
+
+<div class="bp-input">
+  <ng-container *ngIf="_icon">
+    <ng-container *ngTemplateOutlet="iconContainer"></ng-container>
+  </ng-container>
+  <input class="bp-input__input" type="text" placeholder="{{ _placeHolder }}" />
 </div>
+
+<ng-template #iconContainer>
+  <fa-icon class="bp-input__icon" [icon]="faMagnifyingGlass"></fa-icon>
+</ng-template>
