@@ -8,6 +8,8 @@
     placeholder="{{ _placeHolder }}"
     id="{{ _id }}"
     name="{{ _id }}"
+    (blur)="onTouched()"
+    (input)="changeValue($event)"
   />
 </div>
 

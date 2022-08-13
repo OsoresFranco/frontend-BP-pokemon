@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FeaturesRoutingModule } from './features-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomButtonComponent } from '../components/custom-button/custom-button.component';
 import { HomeComponent } from './views/home/home.component';
@@ -13,7 +14,6 @@ import { BpSliderComponent } from '../components/bp-slider/bp-slider.component';
 import { BpFormComponent } from './views/bp-form/bp-form.component';
 import { HeaderComponent } from './views/header/header.component';
 
-
 @NgModule({
   declarations: [
     CustomButtonComponent,
@@ -24,12 +24,13 @@ import { HeaderComponent } from './views/header/header.component';
     TableComponent,
     BpSliderComponent,
     BpFormComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
     FeaturesRoutingModule,
-    FontAwesomeModule
-  ]
+    FontAwesomeModule,
+    ReactiveFormsModule,
+  ],
 })
-export class FeaturesModule { }
+export class FeaturesModule {}

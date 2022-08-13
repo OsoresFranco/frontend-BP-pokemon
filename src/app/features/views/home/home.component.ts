@@ -8,14 +8,29 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  searchTerm = '';
+  pokemonSearch: Pokemon[] = [];
   lista: Pokemon[] = [];
 
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
     this.pokemonService.getPokemon().subscribe({
-      next: (res) => (this.lista = res),
+      next: (res) => {
+        this.lista = res;
+        this.pokemonSearch = res;
+      },
       error: (error) => alert(error),
     });
+  }
+
+  handle() {}
+  setSearchTerm(value: any) {
+    this.searchTerm = value;
+    this.search(this.searchTerm);
+  }
+
+  search(value: string): void {
+    this.pokemonSearch = this.lista.filter((val) => val.name.includes(value));
   }
 }
