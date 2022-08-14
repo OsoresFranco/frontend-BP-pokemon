@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.updateTable()
+    this.updateTable();
   }
 
   updateTable() {
@@ -46,6 +46,10 @@ export class HomeComponent implements OnInit {
   }
 
   search(value: string): void {
-    this.pokemonSearch = this.lista.filter((val) => val.name.includes(value));
+    //VER COMO ARREGLAR ESTO!
+    let normalized = value.toLowerCase();
+    this.pokemonSearch = this.lista.filter((val) =>
+      val.name.toLowerCase().includes(normalized)
+    );
   }
 }
