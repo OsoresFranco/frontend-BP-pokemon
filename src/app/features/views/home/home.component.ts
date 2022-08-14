@@ -8,7 +8,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  titulo: string = '';
+  editPokemon!: Pokemon;
+  titulo: string = 'Nuevo Pokemon';
   searchTerm = '';
   pokemonSearch: Pokemon[] = [];
   lista: Pokemon[] = [];
@@ -17,17 +18,24 @@ export class HomeComponent implements OnInit {
 
   handleEmit($event: any) {
     this.titulo = $event;
-    console.log(this.titulo);
+  }
+
+  handleChangeEmit($event: any) {
+    this.editPokemon = $event;
+    this.titulo = 'Modificar Pokemon: ' + $event.name;
   }
 
   ngOnInit(): void {
-    this.pokemonService.getPokemon().subscribe({
-      next: (res) => {
-        this.lista = res;
-        this.pokemonSearch = res;
-      },
-      error: (error) => alert(error),
-    });
+    this.pokemonService.currentPokemonIndex.subscribe(
+      (lista) => (this.lista = lista)
+    ),
+      this.pokemonService.getPokemon().subscribe({
+        next: (res) => {
+          this.lista = res;
+          this.pokemonSearch = res;
+        },
+        error: (error) => alert(error),
+      });
   }
 
   handle() {}

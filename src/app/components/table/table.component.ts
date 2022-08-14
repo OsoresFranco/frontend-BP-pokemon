@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons';
 import { Pokemon } from 'src/app/models/Pokemon';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-table',
@@ -9,11 +10,22 @@ import { Pokemon } from 'src/app/models/Pokemon';
 })
 export class TableComponent implements OnInit {
   @Input() data: Pokemon[] = [];
+  @Output() editValue = new EventEmitter<any>();
 
   faTrashCan = faTrashCan;
   faPen = faPen;
 
-  constructor() {}
+  constructor(private pokemonService: PokemonService) {}
+
+  handleChangeEmit(pokemon: Pokemon) {
+    this.editValue.emit(pokemon);
+  }
+
+  deletePokemon(pokemon: Pokemon) {
+    this.pokemonService.deletePokemon(String(pokemon.id)).subscribe({
+      next: (res) => console.log(res),
+    });
+  }
 
   ngOnInit(): void {}
 }

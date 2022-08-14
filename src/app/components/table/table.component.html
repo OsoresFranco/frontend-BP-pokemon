@@ -22,8 +22,8 @@
     <td>{{ pokemon.defense }}</td>
 
     <td class="bp-table__actions-container">
-      <fa-icon class="bp-table__icon" [icon]="faPen"></fa-icon>
-      <fa-icon class="bp-table__icon" [icon]="faTrashCan"></fa-icon>
+      <fa-icon class="bp-table__icon" (click)="handleChangeEmit(pokemon)" [icon]="faPen"></fa-icon>
+      <fa-icon class="bp-table__icon" (click)="deletePokemon(pokemon)" [icon]="faTrashCan"></fa-icon>
     </td>
   </tr>
 </table>

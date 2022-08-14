@@ -24,6 +24,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class BpFormComponent implements OnInit {
   @ViewChild('name') name!: BpInputComponent;
   @Input() _title: string = 'Nuevo Pokemon';
+  @Input() _pokemon?: any;
 
   form!: FormGroup;
 
@@ -44,12 +45,20 @@ export class BpFormComponent implements OnInit {
     });
   }
 
-  post() {
-    this.pokemonService.postPokemon(this.form.value).subscribe({
-      next: (res) => {
-        console.log(res);
-      },
-    });
+  submit() {
+    if (this._title === 'Nuevo Pokemon') {
+      this.pokemonService.postPokemon(this.form.value).subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+      });
+    } else if (this._title.includes('Modificar Pokemon')) {
+      this.pokemonService
+        .putPokemon(this.form.value, this._pokemon.id)
+        .subscribe({
+          next: (res) => console.log(res),
+        });
+    }
   }
 
   cancel() {
