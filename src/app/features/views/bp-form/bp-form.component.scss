@@ -1,3 +1,5 @@
+@import "../../../../styles.scss";
+
 .bp-form {
   display: flex;
   justify-content: space-evenly;
@@ -8,6 +10,8 @@
 .bp-form__title {
   text-align: center;
   width: 100%;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .bp-form__section {
@@ -30,4 +34,57 @@
 
 .bp-form__actions-item {
   margin: auto 25px auto 25px;
+}
+
+:host {
+  // Background colors
+  --bp-colors--primary: var(--bp-button-color-primary);
+  --bp-colors--secondary: var(--bp-button-color-secondary);
+  --bp-colors--disabled: var(--bp-button-color-disabled);
+
+  // Font Color
+  --bp-colors--font: var(--bp-button-text);
+  --bp-colors--font--disabled: var(--bp-grey-color-dark);
+}
+
+.bp-button {
+  border-radius: 4px;
+  height: 45px;
+  width: 120px;
+  border: none;
+  color: var(--bp-colors--font);
+  padding: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover:not([disabled]) {
+    filter: brightness(120%);
+    transition-duration: 0.3s;
+  }
+
+  &:active:not([disabled]) {
+    transform: scale(0.95);
+    transition-duration: 0.1s;
+  }
+
+  &--primary {
+    background: var(--bp-colors--primary);
+  }
+
+  &--secondary {
+    background: var(--bp-colors--secondary);
+  }
+
+  &--disabled {
+    background: var(--bp-colors--disabled);
+    color: var(--bp-colors--font--disabled);
+  }
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }

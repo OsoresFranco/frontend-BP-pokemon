@@ -79,6 +79,6 @@ export class BpFormComponent implements OnInit {
   }
 
   cancel() {
-    this.form.reset();
+    
   }
 }

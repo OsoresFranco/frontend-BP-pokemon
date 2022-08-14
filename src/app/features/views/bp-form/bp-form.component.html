@@ -1,4 +1,4 @@
-<p class="bp-form__title">{{_title}}</p>
+<p class="bp-form__title">{{ _title }}</p>
 <form class="bp-form" autocomplete="off" [formGroup]="form">
   <div class="bp-form__section">
     <app-form-field distribution="row">
@@ -35,9 +35,14 @@
 </form>
 
 <div class="bp-form__actions">
-  <app-custom-button (click)="submit()" class="bp-form__actions-item"
-    >Guardar</app-custom-button
+  <button
+    [disabled]="form.invalid"
+    class="bp-button bp-button--primary bp-form__actions-item"
+    (click)="submit()"
   >
+    Guardar
+  </button>
+
   <app-custom-button (click)="cancel()" class="bp-form__actions-item"
     >Cancelar</app-custom-button
   >
