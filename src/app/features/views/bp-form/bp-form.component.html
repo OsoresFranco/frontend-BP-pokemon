@@ -1,28 +1,40 @@
 <p class="bp-form__title">TITULO</p>
-<form class="bp-form" autocomplete="off">
+<form class="bp-form" autocomplete="off" [formGroup]="form">
   <div class="bp-form__section">
     <app-form-field distribution="row">
       <app-bp-label _for="name">Nombre:</app-bp-label>
-      <app-bp-input _id="name" _placeHolder="Name"></app-bp-input>
+      <app-bp-input
+        formControlName="name"
+        _id="name"
+        _placeHolder="Name"
+      ></app-bp-input>
     </app-form-field>
 
     <app-form-field distribution="row">
       <app-bp-label _for="image">Imagen:</app-bp-label>
-      <app-bp-input _id="image" _placeHolder="Image"></app-bp-input>
+      <app-bp-input
+        formControlName="image"
+        _id="image"
+        _placeHolder="Image"
+      ></app-bp-input>
     </app-form-field>
   </div>
 
   <div class="bp-form__section">
-    <app-bp-slider>
+    <app-bp-slider formControlName="attack">
       <app-bp-label>Ataque:</app-bp-label>
     </app-bp-slider>
 
-    <app-bp-slider>
+    <app-bp-slider formControlName="defense">
       <app-bp-label>Defensa:</app-bp-label>
     </app-bp-slider>
   </div>
 </form>
+
 <div class="bp-form__actions">
-  <app-custom-button class="bp-form__actions-item">Guardar</app-custom-button>
-  <app-custom-button colors="secondary" class="bp-form__actions-item">Cancelar</app-custom-button>
+  <app-custom-button 
+  (click)="test()"
+  class="bp-form__actions-item">Guardar</app-custom-button>
+  <app-custom-button
+  class="bp-form__actions-item">Cancelar</app-custom-button>
 </div>

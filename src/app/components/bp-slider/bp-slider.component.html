@@ -11,6 +11,8 @@
     value="50"
     class="bp-slider__selector"
     id="myRange"
+    (blur)="onTouched()"
+    (change)="changeValue($event)"
   />
   <div class="bp-slider__item">100</div>
 </div>
