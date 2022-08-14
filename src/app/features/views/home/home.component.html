@@ -1,11 +1,11 @@
 <div class="bp-main__header-container cont">
-  <app-header (newValue)="setSearchTerm($event)"></app-header>
+  <app-header (newValue)="setSearchTerm($event)" (createEmit)="handleEmit($event)"></app-header>
 </div>
 
 <main class="bp-main__view cont">
   <app-table [data]="pokemonSearch"></app-table>
 </main>
 
-<div class="bp-main__form-container cont">
-  <app-bp-form></app-bp-form>
+<div class="bp-main__form-container cont" >
+  <app-bp-form _title="{{titulo}}"></app-bp-form>
 </div>

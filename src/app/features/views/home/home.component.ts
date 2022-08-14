@@ -8,11 +8,17 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  titulo: string = '';
   searchTerm = '';
   pokemonSearch: Pokemon[] = [];
   lista: Pokemon[] = [];
 
   constructor(private pokemonService: PokemonService) {}
+
+  handleEmit($event: any) {
+    this.titulo = $event;
+    console.log(this.titulo);
+  }
 
   ngOnInit(): void {
     this.pokemonService.getPokemon().subscribe({

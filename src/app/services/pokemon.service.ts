@@ -7,11 +7,15 @@ import { Pokemon } from '../models/Pokemon';
   providedIn: 'root',
 })
 export class PokemonService {
+  url: string = 'https://bp-pokemons.herokuapp.com/?idAuthor=1';
   constructor(private http: HttpClient) {}
 
   getPokemon(): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(
-      'https://bp-pokemons.herokuapp.com/?idAuthor=1'
-    );
+    return this.http.get<Pokemon[]>(this.url);
   }
+
+  postPokemon(pokemon: Pokemon): Observable<Pokemon[]> {
+    return this.http.post<Pokemon[]>(this.url, pokemon);
+  }
+  
 }

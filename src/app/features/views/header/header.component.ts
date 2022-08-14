@@ -7,6 +7,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Output() createEmit = new EventEmitter<any>();
+
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -19,6 +21,10 @@ export class HeaderComponent implements OnInit {
 
   handleChangeEmit(value: any) {
     this.newValue.emit(value);
+  }
+
+  create(val: string) {
+    this.createEmit.emit(val);
   }
 
   ngOnInit(): void {}

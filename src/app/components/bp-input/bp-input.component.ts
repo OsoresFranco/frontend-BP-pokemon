@@ -35,13 +35,22 @@ export class BpInputComponent implements OnInit, ControlValueAccessor {
   _error: string = '';
 
   @Input() _id: string = '';
+  @Input() _value: string = '';
   @Input() _icon: boolean = false;
   @Input() _placeHolder: string = '';
 
   faMagnifyingGlass = faMagnifyingGlass;
   ngOnInit(): void {}
 
-  value: any;
+  set value(value: any) {
+    this._value = value;
+    this.onChange(value);
+  }
+
+  get value(): any {
+    return this._value;
+  }
+
   onChange = (value: any) => {};
   onTouched = () => {};
 
