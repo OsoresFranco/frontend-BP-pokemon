@@ -1,8 +1,10 @@
 import {
   Component,
   ElementRef,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
   ViewChild,
   ViewChildren,
 } from '@angular/core';
@@ -25,6 +27,7 @@ export class BpFormComponent implements OnInit {
   @ViewChild('name') name!: BpInputComponent;
   @Input() _title: string = 'Nuevo Pokemon';
   @Input() _pokemon?: any;
+  @Output() updateEmit = new EventEmitter<any>();
 
   form!: FormGroup;
 
@@ -46,18 +49,32 @@ export class BpFormComponent implements OnInit {
   }
 
   submit() {
+    let pokemon: Pokemon = {
+      idAuthor: 1,
+      name: this.form.get('name')?.value,
+      image: this.form.get('image')?.value,
+      attack: this.form.get('attack')?.value,
+      defense: this.form.get('defense')?.value,
+      hp: 100,
+      type: 'Unknown',
+    };
+
     if (this._title === 'Nuevo Pokemon') {
-      this.pokemonService.postPokemon(this.form.value).subscribe({
+      this.pokemonService.postPokemon(pokemon).subscribe({
         next: (res) => {
           console.log(res);
+          this.updateEmit.emit(res);
+          this.form.reset();
         },
       });
     } else if (this._title.includes('Modificar Pokemon')) {
-      this.pokemonService
-        .putPokemon(this.form.value, this._pokemon.id)
-        .subscribe({
-          next: (res) => console.log(res),
-        });
+      this.pokemonService.putPokemon(pokemon, this._pokemon.id).subscribe({
+        next: (res) => {
+          console.log(res);
+          this.updateEmit.emit(res);
+          this.form.reset();
+        },
+      });
     }
   }
 

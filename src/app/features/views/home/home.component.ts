@@ -26,16 +26,17 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pokemonService.currentPokemonIndex.subscribe(
-      (lista) => (this.lista = lista)
-    ),
-      this.pokemonService.getPokemon().subscribe({
-        next: (res) => {
-          this.lista = res;
-          this.pokemonSearch = res;
-        },
-        error: (error) => alert(error),
-      });
+    this.updateTable()
+  }
+
+  updateTable() {
+    this.pokemonService.getPokemon().subscribe({
+      next: (res) => {
+        this.lista = res;
+        this.pokemonSearch = res;
+      },
+      error: (error) => alert(error),
+    });
   }
 
   handle() {}

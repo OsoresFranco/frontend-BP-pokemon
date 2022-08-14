@@ -11,7 +11,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class TableComponent implements OnInit {
   @Input() data: Pokemon[] = [];
   @Output() editValue = new EventEmitter<any>();
-
+  @Output() updateEmit = new EventEmitter<any>();
   faTrashCan = faTrashCan;
   faPen = faPen;
 
@@ -23,8 +23,12 @@ export class TableComponent implements OnInit {
 
   deletePokemon(pokemon: Pokemon) {
     this.pokemonService.deletePokemon(String(pokemon.id)).subscribe({
-      next: (res) => console.log(res),
+      next: (res) => {
+        console.log(res)
+        this.updateEmit.emit(pokemon)
+      },
     });
+
   }
 
   ngOnInit(): void {}

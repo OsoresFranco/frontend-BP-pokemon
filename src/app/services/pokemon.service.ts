@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { Pokemon } from '../models/Pokemon';
 
 @Injectable({
@@ -8,14 +8,6 @@ import { Pokemon } from '../models/Pokemon';
 })
 export class PokemonService {
   url: string = 'https://bp-pokemons.herokuapp.com/?idAuthor=1';
-
-  private pokemonIndex = new BehaviorSubject<any>([]);
-
-  currentPokemonIndex = this.pokemonIndex.asObservable();
-
-  changepokemonIndex(newPokemonIndex:any[]) {
-    this.pokemonIndex.next(newPokemonIndex);
-  }
 
   constructor(private http: HttpClient) {}
 
