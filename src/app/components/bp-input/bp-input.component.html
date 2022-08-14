@@ -10,7 +10,7 @@
     name="{{ _id }}"
     [value]="value"
     (blur)="onTouched()"
-    (input)="changeValue($event)"
+    (input)="changeValue($event); value = $any($event.target).value"
   />
 </div>
 
