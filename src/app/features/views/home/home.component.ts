@@ -8,6 +8,11 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  snack: boolean = true;
+  toggle() {
+    this.snack = !this.snack;
+  }
+
   editPokemon!: Pokemon;
   titulo: string = 'Nuevo Pokemon';
   searchTerm = '';
