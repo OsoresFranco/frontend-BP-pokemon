@@ -9,15 +9,12 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class HomeComponent implements OnInit {
   snack: boolean = true;
-  toggle() {
-    this.snack = !this.snack;
-  }
-
   editPokemon!: Pokemon;
   titulo: string = 'Nuevo Pokemon';
   searchTerm = '';
   pokemonSearch: Pokemon[] = [];
   lista: Pokemon[] = [];
+  message: string = '';
 
   constructor(private pokemonService: PokemonService) {}
 
@@ -34,11 +31,17 @@ export class HomeComponent implements OnInit {
     this.updateTable();
   }
 
+  toggle() {
+    this.snack = !this.snack;
+    this.message = 'Accion realizada con exito';
+  }
+
   updateTable() {
     this.pokemonService.getPokemon().subscribe({
       next: (res) => {
         this.lista = res;
         this.pokemonSearch = res;
+        this.toggle();
       },
       error: (error) => alert(error),
     });
@@ -51,7 +54,6 @@ export class HomeComponent implements OnInit {
   }
 
   search(value: string): void {
-    //VER COMO ARREGLAR ESTO!
     let normalized = value.toLowerCase();
     this.pokemonSearch = this.lista.filter((val) =>
       val.name.toLowerCase().includes(normalized)

@@ -20,10 +20,9 @@
     _title="{{ titulo }}"
   ></app-bp-form>
 </div>
-<button (click)="toggle()">TOGGLE</button>
 <div *ngIf="snack" class="bp-snackbar__container">
   <app-snackbar>
-    <p>MI TEXTO</p>
+    <p>{{message}}</p>
     <app-custom-button (click)="toggle()" colors="secondary"
       >OK</app-custom-button
     >
