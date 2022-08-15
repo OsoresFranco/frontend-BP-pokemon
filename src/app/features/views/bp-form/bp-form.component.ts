@@ -62,7 +62,6 @@ export class BpFormComponent implements OnInit {
     if (this._title === 'Nuevo Pokemon') {
       this.pokemonService.postPokemon(pokemon).subscribe({
         next: (res) => {
-          console.log(res);
           this.updateEmit.emit(res);
           this.form.reset();
         },
@@ -70,7 +69,6 @@ export class BpFormComponent implements OnInit {
     } else if (this._title.includes('Modificar Pokemon')) {
       this.pokemonService.putPokemon(pokemon, this._pokemon.id).subscribe({
         next: (res) => {
-          console.log(res);
           this.updateEmit.emit(res);
           this.form.reset();
         },

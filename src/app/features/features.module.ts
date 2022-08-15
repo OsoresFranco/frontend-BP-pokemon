@@ -14,6 +14,7 @@ import { BpSliderComponent } from '../components/bp-slider/bp-slider.component';
 import { BpFormComponent } from './views/bp-form/bp-form.component';
 import { HeaderComponent } from './views/header/header.component';
 import { SnackbarComponent } from '../components/snackbar/snackbar.component';
+import { SplashComponent } from './views/splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SnackbarComponent } from '../components/snackbar/snackbar.component';
     BpFormComponent,
     HeaderComponent,
     SnackbarComponent,
+    SplashComponent,
   ],
   imports: [
     CommonModule,

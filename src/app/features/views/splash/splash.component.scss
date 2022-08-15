@@ -1,0 +1,31 @@
+
+
+.layout-helper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.title {
+  font-family: "Silkscreen", cursive;
+  text-align: center;
+}
+
+.annotations-container {
+  width: 60%;
+}
+
+.annotations {
+  text-align: center;
+}
+
+.lists {
+  width: 60%;
+  font-size: 12px;
+}
+
+.thanks{
+    color: rgb(241, 0, 149);
+}
